@@ -13,7 +13,15 @@
     <main>
         <section class="audio-controls">
             <h2>Audio Controls</h2>
-            <!-- Add audio recording/upload controls here -->
+            <form id="audio-upload-form" enctype="multipart/form-data">
+                <label for="audio-file">Upload Audio:</label>
+                <input type="file" id="audio-file" name="audio" accept=".mp3, .wav, .ogg" required>
+                <button type="submit">Upload</button>
+            </form>
+            <p id="feedback"></p>
+            <button id="start-recording">Start Recording</button>
+            <button id="stop-recording" disabled>Stop Recording</button>
+            <audio id="audio-preview" controls></audio>
         </section>
         <section class="transcription">
             <h2>Transcription</h2>
@@ -23,7 +31,8 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Harish Selva</p>
+        <p>&copy; 2023 Your Name</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
