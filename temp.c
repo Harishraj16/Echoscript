@@ -1,5 +1,0 @@
-
-void main()
-{
-    printf("hello");
-}
