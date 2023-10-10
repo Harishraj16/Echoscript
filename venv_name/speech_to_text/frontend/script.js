@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Define the handleAudioUpload function as needed for your project.
     // This function is called when the user submits the audio upload form.
     function handleAudioUpload(event) {
         event.preventDefault();
@@ -59,8 +58,5 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Please select an audio file.");
             return;
         }
-
-        // You can now send the audio file to the backend for processing.
-        // You may want to use AJAX (e.g., fetch) to send the file to your Flask backend.
     }
 });
