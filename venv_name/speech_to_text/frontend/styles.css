@@ -1,57 +1,40 @@
-/* Reset some default styles */
-body, h1, h2, p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Basic styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2rem;
-}
-
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-.audio-controls, .transcription {
-    background-color: white;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.audio-controls h2, .transcription h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.transcription-output {
-    border: 1px solid #ddd;
-    padding: 1rem;
-    min-height: 100px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 0.5rem;
-}
-
-/* Add additional CSS styles as needed for your specific design */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech-to-Text Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Echoscript</h1>
+    </header>
+    <main>
+        <section class="audio-controls">
+            <h2>Audio Controls</h2>
+            <form id="audio-upload-form" enctype="multipart/form-data" action="/upload_audio" method="POST">
+                <label for="audio-file">Upload Audio:</label>
+                <input type="file" id="audio-file" name="audio" accept=".mp3, .wav, .ogg" required>
+                <button type="submit">Upload</button>
+            </form>
+            <p id="feedback"></p>
+           <div>
+            <button id="start-recording">Start Recording</button>
+            <button id="stop-recording" disabled>Stop Recording</button>
+           </div>
+            <audio id="audio-preview" controls></audio>
+        </section>
+        <section class="transcription">
+            <h2>Transcription</h2>
+            <div class="transcription-output">
+                <!-- Transcribed text will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Echoscript</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
